@@ -2,6 +2,11 @@ import requests
 import urllib.parse
 import json
 
+class YouTubeSearchFilters:
+    none = ""
+    hour = "&sp=EgQIARAB"
+    today = "&sp=EgQIAhAB"
+    week = "&sp=EgQIAxAB"
 
 class YoutubeSearch:
     def __init__(self, search_terms: str, max_results=None):
@@ -9,10 +14,10 @@ class YoutubeSearch:
         self.max_results = max_results
         self.videos = self._search()
 
-    def _search(self):
+    def _search(self,filter=YouTubeSearchFilters.none):
         encoded_search = urllib.parse.quote_plus(self.search_terms)
         BASE_URL = "https://youtube.com"
-        url = f"{BASE_URL}/results?search_query={encoded_search}"
+        url = f"{BASE_URL}/results?search_query={encoded_search}{filter}"
         response = requests.get(url).text
         while "ytInitialData" not in response:
             response = requests.get(url).text
