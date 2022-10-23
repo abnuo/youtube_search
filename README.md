@@ -10,7 +10,7 @@ To avoid using the API, this uses the form on the youtube homepage and scrapes t
 
 For a basic search (and all of the current functionality), you can use the search tool as follows:
 
-```pip install youtube-search```
+```pip install git+https://github.com/abnuo/youtube_search```
 
 ```python
 from youtube_search import YoutubeSearch
