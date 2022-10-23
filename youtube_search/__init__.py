@@ -2,7 +2,7 @@ import requests
 import urllib.parse
 import json
 
-class YouTubeSearchFilters:
+class YoutubeSearchFilters:
     none = ""
     hour = "&sp=EgQIARAB"
     today = "&sp=EgQIAhAB"
