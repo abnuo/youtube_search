@@ -9,15 +9,16 @@ class YouTubeSearchFilters:
     week = "&sp=EgQIAxAB"
 
 class YoutubeSearch:
-    def __init__(self, search_terms: str, max_results=None):
+    def __init__(self, search_terms: str, max_results=None, filters=YouTubeSearchFilters.none):
         self.search_terms = search_terms
         self.max_results = max_results
+        self.filters = filters
         self.videos = self._search()
 
-    def _search(self,filter=YouTubeSearchFilters.none):
+    def _search(self):
         encoded_search = urllib.parse.quote_plus(self.search_terms)
         BASE_URL = "https://youtube.com"
-        url = f"{BASE_URL}/results?search_query={encoded_search}{filter}"
+        url = f"{BASE_URL}/results?search_query={encoded_search}{self.filters}"
         response = requests.get(url).text
         while "ytInitialData" not in response:
             response = requests.get(url).text
