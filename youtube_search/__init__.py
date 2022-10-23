@@ -9,7 +9,7 @@ class YoutubeSearchFilters:
     week = "&sp=EgQIAxAB"
 
 class YoutubeSearch:
-    def __init__(self, search_terms: str, max_results=None, filters=YouTubeSearchFilters.none):
+    def __init__(self, search_terms: str, max_results=None, filters=YoutubeSearchFiltersnone):
         self.search_terms = search_terms
         self.max_results = max_results
         self.filters = filters
