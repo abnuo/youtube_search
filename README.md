@@ -1,5 +1,7 @@
 # youtube_search
 
+This is just the same but with YouTubeSearchFilters from https://github.com/joetats/youtube_search/issues/17
+
 Python function for searching for youtube videos to avoid using their heavily rate-limited API
 
 To avoid using the API, this uses the form on the youtube homepage and scrapes the resulting page.
